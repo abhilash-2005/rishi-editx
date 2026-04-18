@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  
+  --glass-bg: rgba(25, 25, 25, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-glow: rgba(255, 255, 255, 0.03);
+  
+  /* RGB / Neon colors */
+  --rgb-accent-1: #ff007f;
+  --rgb-accent-2: #7928ca;
+  --rgb-accent-3: #00d2ff;
+  
+  --gradient-neon: linear-gradient(90deg, var(--rgb-accent-1), var(--rgb-accent-2), var(--rgb-accent-3), var(--rgb-accent-1));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(121, 40, 202, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 210, 255, 0.08), transparent 25%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 var(--glass-glow);
+  border-radius: 16px;
+}
+
+/* RGB Animated Effects */
+.rgb-border {
+  position: relative;
+  border-radius: 16px;
+}
+
+.rgb-border::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: var(--gradient-neon);
+  background-size: 300% 300%;
+  z-index: -1;
+  border-radius: 18px;
+  animation: rgbShift 4s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rgb-border:hover::before {
+  opacity: 1;
+}
+
+.text-gradient {
+  background: var(--gradient-neon);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 4s ease infinite;
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+::selection {
+  background: rgba(121, 40, 202, 0.5);
+  color: white;
+}

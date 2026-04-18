@@ -1,0 +1,133 @@
+.contact-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.contact-info {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-desc {
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.info-icon {
+  color: var(--rgb-accent-3);
+}
+
+.contact-decor {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  font-size: 6rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.contact-form-wrapper {
+  flex: 2;
+  padding: 3rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.form-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 1rem;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--rgb-accent-1);
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+}
+
+.form-input option {
+  background: var(--bg-color);
+  color: white;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--gradient-neon);
+  background-size: 300% 300%;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(121, 40, 202, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .contact-info {
+    max-width: 100%;
+  }
+  .contact-form-wrapper {
+    padding: 2rem;
+  }
+}
