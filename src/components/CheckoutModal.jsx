@@ -3,9 +3,8 @@ import { X, Send, Loader2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './CheckoutModal.css';
 
-const TELEGRAM_BOT_TOKEN = "8765136828:AAFqlSzgLj1y4AeTb67H4EiSt72F14Gwm7w";
-const TELEGRAM_CHAT_ID = "6282041573"; 
-
+const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 const CheckoutModal = ({ cart, totalAmount, onClose }) => {
   const { clearCart } = useCart();
   const [loading, setLoading] = useState(false);
